@@ -35,8 +35,8 @@ module.exports.routes = {
   '/': {
     view: 'static/index'
   },
-  '/vista':{
-	  view: 'vista'
+  '/user/singin':{
+	  controller: "UserController", action:"new"
   }
 
   /***************************************************************************
