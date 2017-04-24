@@ -17,7 +17,9 @@ module.exports = {
 			name: req.param('name'),
 			last_name: req.param('last_name'),
 			username: req.param('username'),
-			email : req.param('email')
+			email : req.param('email'),
+			password: req.param('password'),
+			passwordConfirmation: req.param('passwordConfirmation')
 		}
 		User.create(userObj,function(err,user){
 			if(err){
