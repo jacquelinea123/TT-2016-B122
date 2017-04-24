@@ -53,9 +53,16 @@ module.exports = {
 				return res.redirect('/session/new');
 			}
 			
+			req.session.authenticated = true;
+			req.session.User = user;
 			res.redirect('/user/show/'+user.id);
+			});
 		});
-	});
-}
+	},
+	
+	destroy: function(req, res, next){
+		req.session.destroy();
+		res.redirect('/session/new');
+	}
 };
 
