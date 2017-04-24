@@ -34,11 +34,8 @@ module.exports.routes = {
 
   '/': {
     view: 'static/index'
-  },
-  '/user/singin':{
-	  controller: "UserController", action:"new"
   }
-
+  
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

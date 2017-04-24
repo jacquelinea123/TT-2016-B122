@@ -9,7 +9,7 @@ module.exports = {
 	
 	new:function (req, res){
 		console.log('entre al formulario registro');
-		res.view('user/singin');
+		res.view();
 	},
 	create:function(req, res){
 		//body...
@@ -24,8 +24,46 @@ module.exports = {
 				console.log(err);
 				return res.redirect('user/new');
 			}
-			res.redirect('user');
-		})
+			res.redirect('user/show/'+user.id);
+		});
+	},
+	show: function(req, res, next){
+		User.findOne(req.param('id'), function userFounded(err, user){
+			if (err)
+				return next(err);
+			res.view({
+				user: user
+			});
+		});
+	},
+	edit: function(req, res, next){
+		User.findOne(req.param('id'), function userFounded(err, user){
+			if (err)
+				return next(err);
+			if (!user)
+				return next();
+			res.view({
+				user: user
+			});
+		});
+	},
+	update: function(req, res, next){
+		var userObj = {
+			name: req.param('name'),
+			last_name: req.param('last_name'),
+			username: req.param('username'),
+			email: req.param('email')
+		}
+		
+		User.update(req.param('id'), userObj, function userUpdated(err, user){
+			if (err){
+				req.session.flash = {
+					err: err
+				}
+				return res.redirect('user/edit/' + req.param('id'));
+			}
+			res.redirect('user/show/' + req.param('id'));
+		});
 	}
 };
 
