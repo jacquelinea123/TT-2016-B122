@@ -62,7 +62,29 @@ module.exports = {
 				}
 				return res.redirect('user/edit/' + req.param('id'));
 			}
-			res.redirect('user/show/' + req.param('id'));
+			res.redirect(' user/show/' + req.param('id'));
+		});
+	},
+	
+	index :function (req,res,next){
+		User.find(function userFounded(err, users){
+			if(err){
+				console.log(err);
+				return next(err);
+			}
+			res.view({
+				users: users
+			});
+		});
+	},
+	
+	destroy :function (req, res, next){
+		User.destroy(req.param('id'), function userDestroyed (err) {
+			if(err){
+				console.log(err);
+				return next(err);
+			}
+			res.redirect('/user/index');
 		});
 	}
 };
