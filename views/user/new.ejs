@@ -1,26 +1,605 @@
-
 <div class="container">
-	<% if(flash && flash.err){ %>
-	<ul class="alert alert-success">
-		<% Object.keys(flash.err).forEach(function(error){ %>
-		<li> <%- JSON.stringify(flash.err[error]) %></li>
-		<% }) %>
-	</ul>
-	<% } %>
-<form action="/user/create" method="POST" accept-charset="utf-8" class="form-singin">
-	<label>Name</label>
-	<input type="text" name="name" class="form-control" required>
-	<label>Lastname</label>
-	<input type="text" name="last_name" class="form-control" required>
-	<label>Username</label>
-	<input type="text" name="username" class="form-control" required>
-	<label>Email</label>
-	<input type="email" name="email" class="form-control" required>
-	<label>Contraseña</label>
-	<input type="password" name="password" class="form-control" required>
-	<label>Confirmar Contraseña</label>
-	<input type="password" name="passwordConfirmation" class="form-control" required>
-	</br>
-	<input type="submit" class="btn btn-default" value="enviar"/>
-</form>
+<form class="form-inline">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form class="form-horizontal" method="post">
+                    <fieldset>
+                        <legend class="text-center header">Ficha de reinscripción</legend>
+                        <legend align="center">Datos del infante</legend>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control" required="">
+                            </div>
+                            </div>
+                        
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="lname" name="name" type="text" placeholder="Apellido paterno" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="lname" name="name" type="text" placeholder="Apellido materno" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="anos" name="name" type="number" placeholder="Años" class="form-control" required="">
+                            </div>
+                        </div>
+
+                       
+
+                        <br><br>
+                        
+                       
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="meses" name="name" type="number" placeholder="Meses" class="form-control" required="">
+                            </div>
+                        </div>
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="curp" name="name" type="text" placeholder="CURP" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="folio" name="name" type="text" placeholder="Folio" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            
+                              &nbsp&nbsp&nbsp Nacimiento
+                             <input id="nacimiento" name="name" type="date"  class="form-control" required="">
+                            
+                        </div>
+
+<br><br>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="grupo" name="name" type="text" placeholder="Grupo" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="grupoprocedencia" name="name" type="text" placeholder="Grupo de procedencia" class="form-control" required="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="cicloe" name="name" type="text" placeholder="Ciclo escolar" class="form-control" required="">
+                            </div>
+                        </div>
+
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <div class="form-group">
+                            <label class="control-label col-xs-3">Genero:  &nbsp  &nbsp  &nbsp  &nbsp</label>
+                            <div class="col-xs-2">
+                                <label class="radio-inline">
+                                    <input type="radio" name="genderRadios" value="male"> M
+                                </label>
+                            </div>
+                            <div class="col-xs-2">
+                                <label class="radio-inline">
+                                    <input type="radio" name="genderRadios" value="female"> F
+                                </label>
+                            </div>
+                        </div>
+
+                        <br><br>
+                       <legend align="center">Datos del derechoabiente</legend>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control" required="">
+                            </div>
+                            </div>
+                        
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="lname" name="name" type="text" placeholder="Apellido paterno" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="lname" name="name" type="text" placeholder="Apellido materno" class="form-control" required="">
+                            </div>
+                        </div>                        
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="phone" name="phone" type="number" placeholder="Teléfono" class="form-control" required="">
+                            </div>
+                        </div>
+
+                          <br><br>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="email" name="email" type="email" placeholder="Correo electrónico" class="form-control" required="">
+                            </div>
+                        </div>
+
+                       <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="ocupacion" name="name" type="text" placeholder="ocupación" class="form-control" required="">
+                            </div>
+                        </div>  
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="curpd" name="name" type="text" placeholder="CURP" class="form-control" required="">
+                            </div>
+                        </div>  
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="categoria" name="name" type="text" placeholder="categoria" class="form-control" required="">
+                            </div>
+                        </div> 
+                        <br><br>
+
+                        
+                        <div class="form-group">
+                            
+                              &nbsp Ingreso IPN
+                             <input id="nacimiento" name="name" type="date"  class="form-control" required="">
+                            
+                        </div>
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="noempleado" name="name" type="text" placeholder="No. de empleado" class="form-control" required="">
+                            </div>
+                        </div>  
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="sueldo" name="name" type="text" placeholder="Sueldo mensual" class="form-control" required="">
+                            </div>
+                        </div>  
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="adscripcion" name="name" type="text" placeholder="adscripcion" class="form-control" required="">
+                            </div>
+                        </div>  
+
+                        <br><br>
+                         
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="nombrejefe" name="name" type="text" placeholder="Nombre del jefe inmediato" class="form-control" required="">
+                            </div>
+                        </div>     
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="cargojefe" name="name" type="text" placeholder="Cargo del jefe inmediato" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="horario" name="name" type="text" placeholder="Horario de trabajo" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="telwork" name="name" type="text" placeholder="Telefono directo" class="form-control" required="">
+                            </div>
+                        </div>  
+
+                        <br><br>
+                         
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="extwork" name="name" type="text" placeholder="Extención" class="form-control" required="">
+                            </div>
+                        </div>  
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="usuario" name="name" type="text" placeholder="usuario" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-key bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="contraseña" name="name" type="password" placeholder="Contraseña" class="form-control" required="">
+                            </div>
+                        </div>                        
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-key bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="contrarepe" name="name" type="password" placeholder="Repita la contraseña" class="form-control" required="">
+                            </div>
+                        </div>          
+
+                        <br><br>
+                       <legend align="center" >Dirección:</legend>
+                       
+                       
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="calle" name="name" type="text" placeholder="Calle" class="form-control" required="">
+                            </div>
+                        </div>  
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="noext" name="name" type="number" placeholder="Num. exterior" class="form-control" required="">
+                            </div>
+                        </div>  
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="noint" name="name" type="number" placeholder="Num. interior" class="form-control" required="">
+                            </div>
+                        </div>  
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="colonia" name="name" type="text" placeholder="Colonia" class="form-control" required="">
+                            </div>
+                        </div> 
+
+
+
+                        <br><br>
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="delegacion" name="name" type="text" placeholder="Del o mun" class="form-control" required="">
+                            </div>
+                        </div>  
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="entidad" name="name" type="text" placeholder="Entidad federativa" class="form-control" required="">
+                            </div>
+                        </div> 
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="cp" name="name" type="number" placeholder="Código postal" class="form-control" required="">
+                            </div>
+                        </div>  
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="telfijo" name="name" type="number" placeholder="Teléfono fijo" class="form-control" required="">
+                            </div>
+                        </div>  
+
+
+                         <br><br>
+                       <legend align="center">Datos del padre ó tutor</legend>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control" required="">
+                            </div>
+                            </div>
+                        
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="lname" name="name" type="text" placeholder="Apellido paterno" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="lname" name="name" type="text" placeholder="Apellido materno" class="form-control" required="">
+                            </div>
+                        </div>                        
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="phone" name="phone" type="number" placeholder="Teléfono" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+                        <br><br>
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="lugarTrab" name="name" type="text" placeholder="Lugar de trabajo" class="form-control" required="">
+                            </div>
+                        </div>  
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="ocupacion" name="name" type="text" placeholder="Ocupación" class="form-control" required="">
+                            </div>
+                        </div>  
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="phone" name="phone" type="number" placeholder="Teléfono de trabajo" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="phone" name="phone" type="number" placeholder="Celular" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+                        <br><br>
+
+                         
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="religion" name="name" type="text" placeholder="Religión" class="form-control" required="">
+                            </div>
+                        </div> 
+
+
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                         <div class="form-group">
+                         &nbsp&nbsp&nbsp&nbsp Domicilio del trabajo:
+                            <div class="col-xs-9">
+                                <textarea style="resize:none" rows="3" class="form-control" placeholder="Domicilio" resize="none"> </textarea>
+                                 </div>
+                        </div>
+
+                        
+
+                        
+
+
+
+                       
+
+                        <br><br>
+                       <legend align="center" >Dirección:</legend>
+                       
+                       
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="calle" name="name" type="text" placeholder="Calle" class="form-control" required="">
+                            </div>
+                        </div>  
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="noext" name="name" type="number" placeholder="Num. exterior" class="form-control" required="">
+                            </div>
+                        </div>  
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="noint" name="name" type="number" placeholder="Num. interior" class="form-control" required="">
+                            </div>
+                        </div>  
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="colonia" name="name" type="text" placeholder="Colonia" class="form-control" required="">
+                            </div>
+                        </div> 
+
+
+
+                        <br><br>
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="delegacion" name="name" type="text" placeholder="Del o mun" class="form-control" required="">
+                            </div>
+                        </div>  
+
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="entidad" name="name" type="text" placeholder="Entidad federativa" class="form-control" required="">
+                            </div>
+                        </div> 
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-home bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="cp" name="name" type="number" placeholder="Código postal" class="form-control" required="">
+                            </div>
+                        </div>  
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="telfijo" name="name" type="number" placeholder="Teléfono del trabajo" class="form-control" required="">
+                            </div>
+                        </div>  
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="telfijoext" name="name" type="number" placeholder="Extención" class="form-control" required="">
+                            </div>
+                        </div>  
+
+
+                        <legend align="center">Otros hijos inscritos en el CENDI del IPN</legend>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="fname" name="name" type="text" placeholder="Nombre hijo1" class="form-control" required="">
+                            </div>
+                            </div>
+                        
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="lname" name="name" type="text" placeholder="Apellido paterno hijo1" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="lname" name="name" type="text" placeholder="Apellido materno hijo1" class="form-control" required="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="cendi" name="name" type="text" placeholder="CENDI al que asiste hijo1" class="form-control" required="">
+                            </div>
+                        </div>
+                        <br><br>
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="fname" name="name" type="text" placeholder="Nombre hijo2" class="form-control" required="">
+                            </div>
+                            </div>
+                        
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="lname" name="name" type="text" placeholder="Apellido paterno hijo2" class="form-control" required="">
+                            </div>
+                        </div>
+
+
+
+                         <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="lname" name="name" type="text" placeholder="Apellido materno hijo2" class="form-control" required="">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="cendi" name="name" type="text" placeholder="CENDI al que asiste hijo2" class="form-control" required="">
+                            </div>
+                        </div>
+                         
+
+
+                         <br><br><br><br>
+                         <center>
+                        <div class="form-group">
+                            <div class="col-xs-offset-3 col-xs-9">
+                                <input type="submit" class="btn btn-primary" value="Enviar">
+                            </div>
+                        </div>
+                       </center>
+
+                      </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    </form>
 </div>

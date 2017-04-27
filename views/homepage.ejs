@@ -1,74 +1,939 @@
-<!-- Default home page -->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600' rel='stylesheet' type='text/css'>
-<style>
-  /* Styles included inline since you'll probably be deleting this page anyway */
-  html,body{text-align:left;font-size:1em}html,body,img,form,textarea,input,fieldset,div,p,div,ul,li,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,code{margin:0;padding:0}ul,li{list-style:none}img{display:block}a img{border:0}a{text-decoration:none;font-weight:normal;font-family:inherit}*:active,*:focus{outline:0;-moz-outline-style:none}h1,h2,h3,h4,h5,h6{font-weight:normal}div.clear{clear:both}.clearfix:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden}body{font-family:"Open Sans",Arial,sans-serif;font-weight:300;}.top-bar {width: 100%; background-color: #e4f0f1; padding: 15px 0;}.top-bar .container img {float: left;}.top-bar .container ul {float: right; padding-top: 25px;}.top-bar .container li {float: left; width: 125px; text-align: center; font-size: 15px; color:#000; font-weight: 600;}.top-bar .container a li:hover {color: #118798; -webkit-transition:color 200ms; -moz-transition:color 200ms; -o-transition:color 200ms;transition:color 200ms;}.container{width: 80%; max-width: 1200px; margin: auto;}div.header {-webkit-transition: 6s; -moz-transition: 6s; -o-transition: 6s;transition: 6s; background: rgba(4, 36, 41, 0.89) url(http://sailsjs.org/images/img_sailsShadow.png) no-repeat 42% bottom; padding: 100px 0 65px;}.header h1#main-title{color: #fff; font-weight: 300; font-size: 2.5em;}.header h3{color: #b1eef7; font-style: italic; font-weight: 300;}.header h3 code{font-style: normal!important; background-color: rgba(255,255,255,0.5); font-weight: 300; color:#0e6471; margin: 0px 5px;}div.main.container{padding: 50px 0;}h1 {color: #118798; font-weight: 300;}code {font-size: inherit; font-family: 'Consolas', 'Monaco', monospace; padding:4px 5px 1px; background-color: #f3f5f7}a{color: #118798; font-weight: 300; text-decoration: underline;}a:hover {color: #0e6471; -webkit-transition:color 200ms; -moz-transition:color 200ms; -o-transition:color 200ms;transition:color 200ms;}p{line-height: 1.5em;}blockquote{background-color: #e4f0f1; padding: 25px; line-height: 1.5em; margin: 15px 0;}blockquote span{font-weight: 600; padding-right: 5px;}ul.getting-started{padding: 25px 75px 25px 0; width: 70%; float: left; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}ul.getting-started li{padding: 25px 0;}ul.getting-started li h3 {padding-bottom: 10px; font-size: 25px; font-weight: 300;}.sprite{background:url(http://sailsjs.org/images/newapp.sprite.png) no-repeat; position: absolute; left: 0; top:0;}.getting-started .sprite{margin-left:10px;padding-left:60px;height:42px;width:0; float: left;}.getting-started .one{background-position:0 0}.getting-started .two{background-position:0 -42px}.getting-started .three{background-position:0 -83px}div.step {position: relative; padding-left: 70px; opacity: 0.9;}div.step:hover{ opacity: 1;}div.links {float: left; width: 30%; max-width: 325px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #f3f5f7; border: 1px solid #ebebeb; padding: 25px 45px 35px;}div.links h3 {color: #727272; text-align: center; font-size: 28px; font-weight: 300;}div.links h4 {color: #727272; font-size: 17px; font-weight: 600; padding: 15px 0 10px;}div.links .link-list a {text-decoration: none; font-weight: 400;}div.links .link-list a li {padding: 0px 0px 5px 10px;}div.default-page{min-width: 1200px;}.pocket{display:none;}
-</style>
-<script type="text/javascript">
-setTimeout(function sunrise () {
-  document.getElementsByClassName('header')[0].style.backgroundColor = '#118798';
-}, 0);
-</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Sails App</title>
 
-<div class="default-page">
-  <div class="header">
-    <h1 id="main-title" class="container"><%= __('A brand new app.') %></h1>
-    <h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
-  </div>
-  <div class="main container clearfix">
-    <!-- <h1>Getting started</h1>
-    <p>Don't worry, we've got your back.</p> -->
-    <ul class="getting-started">
-      <li class="clearfix">
-        <div class="step">
-          <div class="sprite one"></div>
-          <h3>Generate a REST API.</h3>
-          <p>
-            Run <code>sails generate api user</code>.  This will create two files: a <a href="http://sailsjs.org/#!/documentation/concepts/ORM/Models.html">model</a> <code class="pocket">api/models/User.js</code> and a <a href="http://sailsjs.org/#!/documentation/concepts/Controllers">controller</a><code class="pocket">api/controllers/UserController.js</code>.
-          </p>
-        </div>
-      </li>
-      <li class="clearfix">
-        <div class="step">
-          <div class="sprite two"></div>
-          <h3>
-            Lift your app.
-          </h3>
-          <p>
-            Run <code>sails lift</code> to start up your app server.  If you visit <a target="_blank" href="http://localhost:<%= sails.config.port || 1337%>/user"><code>http://localhost:<%= sails.config.port || 1337%>/user</code></a> in your browser, you'll see a <a href="http://sailsjs.org/#!/documentation/reference/blueprint-api">WebSocket-compatible</a> user API.
-          </p>
-        </div>
-      </li>
-      <li class="clearfix">
-        <div class="step">
-          <div class="sprite three"></div>
-          <h3>
-            Dive in.
-          </h3>
-          <p>Blueprints are just the beginning.  You'll probably also want to learn how to customize your app's <a href="http://sailsjs.org/#!/documentation/concepts/Routes">routes</a>, set up <a href="http://sailsjs.org/#!/documentation/concepts/Policies">security policies</a>, configure your <a href="http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html">data sources</a>, and build custom <a target="_blank" href="http://sailsjs.org/#!/documentation/concepts/Controllers?q=actions">controller actions</a>. For more help getting started, check out the links on this page.</p>
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        </div>
-      </li>
-    </ul>
-    <div class="links">
-      <!-- <h3>Links</h3> -->
-      <ul class="link-list">
 
-        <h4>Docs</h4>
-        <a target="_blank" href="http://sailsjs.org/#!/documentation/anatomy/myApp"><li>App Structure</li></a>
-        <a target="_blank" href="http://sailsjs.org/#!/documentation/reference"><li>Reference</li></a>
-        <a target="_blank" href="http://sailsjs.org/#!/documentation/concepts/extending-sails/Adapters/adapterList.html"><li>Supported Databases</li></a>
+    <!--
+        Stylesheets and Preprocessors
+        ==============================
 
-        <h4>Tutorials</h4>
-        <a target="_blank" href="https://github.com/sails101"><li>Sails 101</li></a>
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
 
-        <h4>Community</h4>
-        <a target="_blank" href="http://stackoverflow.com/search?q=sails.js"><li>StackOverFlow</li></a>
-        <a target="_blank" href="https://github.com/balderdashy/sails"><li>GitHub</li></a>
-        <a target="_blank" href="https://groups.google.com/forum/#!forum/sailsjs"><li>Google Group</li></a>
-        <a target="_blank" href="http://webchat.freenode.net/"><li>IRC (#sailsjs on freenode)</li></a>
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
 
-      </ul>
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/bootstrap-theme.css">
+    <link rel="stylesheet" href="/styles/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/easy-responsive-tabs.css">
+    <link rel="stylesheet" href="/styles/font-awesome.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/jquery.gallery.css">
+    <link rel="stylesheet" href="/styles/popuo-box.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <!--STYLES END-->
+  </head>
+
+  <body>
+    <!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Nursery a Society and People Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Nursery Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+    function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link rel="stylesheet" href="css/easy-responsive-tabs.css">
+<link rel="stylesheet" href="css/jquery.gallery.css">
+<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome-icons -->
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+<link href="//fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+</head>
+  
+<body>
+<script src="js/jquery.vide.min.js"></script>
+<!-- header -->
+  <div class="w3_agile_header">
+    <div class="container">
+      <div class="w3_agile_header_left">
+        <p>Clementina Batalla de Bassols.</p>
+      </div>
+      <div class="w3_agile_header_right">
+        <ul>
+          <li><a href="#small-dialog" class="play-icon popup-with-zoom-anim">Login</a></li>
+          <li><i class="fa fa-phone" aria-hidden="true"></i>(55) 5729 6000 EXT. 55167 </li>
+        </ul>
+      </div>
+      <div class="clearfix"> </div>
     </div>
   </div>
+  <div class="w3_navigation">
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="navbar-header navbar-left">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="w3_navigation_pos">
+            <h1>CENDI IPN</h1>
+
+          </div>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <br><br> <br><div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+          <nav class="menu menu--miranda">
+            <ul class="nav navbar-nav menu__list">
+              &nbsp&nbsp&nbsp<li class="menu__item menu__item--current"><a href="#" class="menu__link">Inicio</a></li>
+              <li class="menu__item"><a href="#about" class="scroll menu__link">Programa pedagógico</a></li>
+             <li></li> <li class="menu__item"><a href="#work" class="scroll menu__link">Galería</a></li>
+              <li class="menu__item"><a href="#team" class="scroll menu__link">Equipo de trabajo</a></li>
+            </ul>
+          </nav>
+        </div>
+      </nav>  
+    </div>
+  </div>
+<!-- //header -->
+<!-- pop-up-box -->
+  <div id="small-dialog" class="mfp-hide w3ls_small_dialog wthree_pop">
+    <h3>LOGIN</h3>    
+    <div class="agileits_modal_body">
+      <form action="#" method="post">
+        <div class="agileits_w3layouts_user">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <input type="text" name="Name" placeholder="User Name" required="">
+        </div>
+        <div class="agileits_w3layouts_user">
+          <i class="fa fa-key" aria-hidden="true"></i>
+          <input type="password" name="Password" placeholder="Password" required="">
+        </div>
+        <div class="agile_remember">
+          <div class="agile_remember_left">
+            <div class="check">
+              <label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>remember me</label>
+            </div>
+          </div>
+          <div class="agile_remember_right">
+            <a href="#">Forgot Password?</a>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+        <input type="submit" value="login">
+      </form>
+      <h5>Don't have an account? <a href="#small-dialog1" class="play-icon popup-with-zoom-anim">Sign Up</a></h5>
+    </div>
+  </div>
+  <div id="small-dialog1" class="mfp-hide w3ls_small_dialog wthree_pop">
+    <h3>Sign Up</h3>    
+    <div class="agileits_modal_body">
+      <form action="#" method="post">
+        <h4>Profile information :</h4>
+        <div class="agileits_w3layouts_user">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <input type="text" name="Name" placeholder="First Name" required="">
+        </div>
+        <div class="agileits_w3layouts_user">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <input type="text" name="Name" placeholder="Last Name" required="">
+        </div>
+        <div class="agileinfo_subscribe">
+          <div class="check">
+            <label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>subscribe to newsletter</label>
+          </div>
+        </div>
+        <h4>Login information :</h4>
+        <div class="agileits_w3layouts_user">
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          <input type="email" name="Email" placeholder="Email" required="">
+        </div>
+        <div class="agileits_w3layouts_user agileits_w3layouts_user_agileits">
+          <i class="fa fa-key" aria-hidden="true"></i>
+          <input type="password" name="Password" placeholder="Password" required="">
+        </div>
+        <div class="agileits_w3layouts_user">
+          <i class="fa fa-key" aria-hidden="true"></i>
+          <input type="password" name="Password" placeholder="Confirm Password" required="">
+        </div>
+        <div class="agileinfo_subscribe">
+          <div class="check">
+            <label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>i accept the terms and conditions</label>
+          </div>
+        </div>
+        <input type="submit" value="Register">
+      </form>
+      <h5>Already a member <a href="#small-dialog" class="play-icon popup-with-zoom-anim">Sign In</a></h5>
+    </div>
+  </div>
+<!-- //pop-up-box -->
+<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script>
+  $(document).ready(function() {
+  $('.popup-with-zoom-anim').magnificPopup({
+    type: 'inline',
+    fixedContentPos: false,
+    fixedBgPos: true,
+    overflowY: 'auto',
+    closeBtnInside: true,
+    preloader: false,
+    midClick: true,
+    removalDelay: 300,
+    mainClass: 'my-mfp-zoom-in'
+  });
+                                  
+  });
+</script>
+<!-- banner -->
+  <div data-vide-bg="video/nursery">
+    <div class="center-container">
+      <div class="container">
+        <div class="w3_agile_banner_info">
+          <div class="agileits_w3layouts_header">
+          </div>
+          <div class="agile_more">
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- bootstrap-pop-up -->
+  <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          Nursery
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>            
+        </div>
+        <section>
+          <div class="modal-body">
+            <div class="w3_modal_body_left">
+              <img src="images/1.jpg" alt=" " class="img-responsive" />
+            </div>
+            <div class="w3_modal_body_right">
+              <h4>Suspendisse et sapien ac diam suscipit posuere</h4>
+              <p>Ut enim ad minima veniam, quis nostrum 
+              exercitationem ullam corporis suscipit laboriosam, 
+              nisi ut aliquid ex ea commodi consequatur? Quis autem 
+              vel eum iure reprehenderit qui in ea voluptate velit 
+              esse quam nihil molestiae consequatur.
+              <i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit 
+                esse quam nihil molestiae consequatur.</i>
+                Fusce in ex eget ligula tempor placerat. Aliquam laoreet mi id felis commodo 
+                interdum. Integer sollicitudin risus sed risus rutrum 
+                elementum ac ac purus.</p>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+<!-- //bootstrap-pop-up -->
+<!-- banner-bottom -->
+
+
+<div class="banner-bottom">
+ <div class="container">
+      <h3><span class="w3_child">C</span><span class="w3_child1">E</span><span class="w3_child2">N</span><span class="w3_child3">D</span><span class="w3_child4">I</span>   <tb> Clementina Batalla de Bassols.</h3>
+      <br><p align="center">Nuestro CENDI cuenta con: <br><br>
+         - Área  de Filtro <br>
+          -Cubículos del personal técnico: pedagogía, odontología, trabajo social, médico, psicología.<br>
+          -Grupo de: Lactantes I, II, III, Maternal I, II y Preescolares I, II, III <br>
+         - Área de juegos.<br>
+          -Salón de usos múltiples<br>
+          -Comedor de niños<br>
+          -Comedor de personal<br>
+          -Lactario<br>
+          -Cocina<br>
+          - Almacenes de servicios​</p>
+          <br><br><br><br>
+          <h3>Nuestro programa pedagócio impulsa el desarrollo y el aprendizaje</h3>
+          <br> 
+          <div> 
+          </div>
+  <div id="about" class="banner-bottom">
+         
+
+          <img src="images/uno.jpg" align="left" border="1">
+
+
+          <br><br><br><br><br><br><br><br><br>
+          <tb>&nbsp&nbsp&nbspEl desarrollo socio‐emocional es la capacidad <br>&nbsp&nbsp&nbspde un niño de comprender los sentimientos<br>&nbsp&nbsp&nbsp de los demás,<br> &nbsp&nbsp&nbspcontrolar sus propios sentimientos y comportamientos<br>&nbsp&nbsp&nbsp y llevarse bien con sus compañeros.<br>&nbsp&nbsp&nbsp Para que los niños puedan adquirir<br>&nbsp&nbsp&nbsp las habilidades básicas que   necesitan,<br>&nbsp&nbsp&nbsp tal como cooperación, seguir  instrucciones, <br>&nbsp&nbsp&nbspdemostrar control propio y prestar atención,<br>&nbsp&nbsp&nbsp  deben poseer habilidades socio‐emocionales. <br>&nbsp&nbsp&nbspLos senentimientos de confianza, seguridad,<br>&nbsp&nbsp&nbsp
+amistad, afecto y humor  son todos parte del<br>&nbsp&nbsp&nbsp desarrollo socio‐emocional de un niño.
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="agile_banner_bottom_grids">
+        <div class="col-md-3 agile_banner_bottom_grid">
+          <div class="view view-first">
+            <img src="images/2.jpg" alt=" " class="img-responsive" />
+            <div class="mask">
+              <h5>Área física</h5>
+              <p>-Motricidad fina<br>-Motricidad gruesa.</p>
+            </div>
+          </div>
+          <div class="agile_banner_bottom_grid_pos">
+            <h4>Área física</h4>
+          </div>
+        </div>
+        <div class="col-md-3 agile_banner_bottom_grid">
+          <div class="view view-first">
+            <img src="images/3.jpg" alt=" " class="img-responsive" />
+            <div class="mask">
+              <h5 class="agileits_w3layouts1">Área cognitiva</h5>
+              <p>-Desarrollo de habilidades del pensamiento<br>-Razonamiento matemático.</p>
+            </div>
+          </div>
+          <div class="agile_banner_bottom_grid_pos">
+            <h4 class="agileits_w3layouts1">Área cognitiva</h4>
+          </div>
+        </div>
+        <div class="col-md-3 agile_banner_bottom_grid">
+          <div class="view view-first">
+            <img src="images/4.jpg" alt=" " class="img-responsive" />
+            <div class="mask">
+              <h5 class="agileits_w3layouts2">Área Lingüistica</h5>
+              <p>Desarrollo de lingüística<br>-Razonamiento verbal.</p>
+            </div>
+          </div>
+          <div class="agile_banner_bottom_grid_pos">
+            <h4 class="agileits_w3layouts2">Área Lingüistica</h4>
+          </div>
+        </div>
+        <div class="col-md-3 agile_banner_bottom_grid">
+          <div class="view view-first">
+            <img src="images/5.jpg" alt=" " class="img-responsive" />
+            <div class="mask">
+              <h5 class="agileits_w3layouts3">Área creativa</h5>
+              <p>-Música <br>-Expresión artística.</p>
+            </div>
+          </div>
+          <div class="agile_banner_bottom_grid_pos">
+            <h4 class="agileits_w3layouts3">Área creativa</h4>
+          </div>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+  </div>
+<!-- //banner-bottom -->
+
+<!-- team -->
+  <div id="team" class="team">
+    <div class="container">
+      <h3 class="w3_agileits_head"> <span class="w3_child">E</span><span class="w3_child1">q</span><span class="w3_child2">u</span><span class="w3_child4">i</span><span class="w3_child">p</span><span class="w3_child1">o</span> de trabajo</h3>
+      <p class="w3_agile_elit">Conoce a nuestro equipo de trabajo e interactúa con ellos.</p>
+      <div class="agile_banner_bottom_grids">
+        <div class="w3_slider">
+          <ul class="slides">
+            <li class="slide">
+              <div class="col-md-3 wthree_team_grid">
+                <img src="images/7.jpg" alt=" " class="img-responsive" />
+                <div class="wthree_team_grid_w3">
+                  <h4>Gladis Genis Guevara</h4>
+                  <p>Directora del CENDI</p>
+                  <div class="wthree_team_grid_w3_pos">
+                    <ul class="agileinfo_social_icons">
+                      <li><a href="#" class="w3ls_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                      <li><a href="#" class="agileits_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                      <li><a href="#" class="w3l_google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 wthree_team_grid">
+                <img src="images/9.jpg" alt=" " class="img-responsive" />
+                <div class="wthree_team_grid_w3">
+                  <h4>Raquel Martínez Gonzáles</h4>
+                  <p>Técnica de Trabajo Social</p>
+                  <div class="wthree_team_grid_w3_pos">
+                    <ul class="agileinfo_social_icons">
+                      <li><a href="#" class="agileits_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                      <li><a href="#" class="w3_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                      <li><a href="#" class="w3ls_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 wthree_team_grid">
+                <img src="images/8.jpg" alt=" " class="img-responsive" />
+                <div class="wthree_team_grid_w3">
+                  <h4>Dra. Marina López Santiago</h4>
+                  <p>Tecnica de Servicio Médico</p>
+                  <div class="wthree_team_grid_w3_pos">
+                    <ul class="agileinfo_social_icons">
+                      <li><a href="#" class="w3_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                      <li><a href="#" class="w3l_google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                      <li><a href="#" class="w3ls_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 wthree_team_grid">
+                <img src="images/10.jpg" alt=" " class="img-responsive" />
+                <div class="wthree_team_grid_w3">
+                  <h4>Dra. Dulce Stephany Miranda.</h4>
+                  <p>Tecnica de Odontología</p>
+                  <div class="wthree_team_grid_w3_pos">
+                    <ul class="agileinfo_social_icons">
+                      <li><a href="#" class="w3l_google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                      <li><a href="#" class="w3ls_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                      <li><a href="#" class="agileits_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"> </div>
+            </li>
+            <li class="slide">
+              <div class="col-md-3 wthree_team_grid">
+                <img src="images/7.jpg" alt=" " class="img-responsive" />
+                <div class="wthree_team_grid_w3">
+                  <h4>Yurixhi Barreta Gallardo</h4>
+                  <p>Técnica de nutrición</p>
+                  <div class="wthree_team_grid_w3_pos">
+                    <ul class="agileinfo_social_icons">
+                      <li><a href="#" class="w3ls_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                      <li><a href="#" class="agileits_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                      <li><a href="#" class="w3l_google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"> </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- //team -->
+
+
+<!-- work -->
+  <div id="work" class="work">
+    <div class="container">
+      <h3 class="w3_agileits_head">Salas del <span class="w3_child">C</span><span class="w3_child1">E</span><span class="w3_child4">N</span><span class="w3_child2">D</span><span class="w3_child">I</span> </h3>
+      <p class="w3_agile_elit">En este apartado podrás observar imágenes de nuestras salas.</p>
+      <div class="agile_work_single_grids">
+        <div class="bs-example bs-example-tabs wthree_example_tab" role="tabpanel" data-example-id="togglable-tabs">
+          <ul id="myTab" class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">All</a></li>
+            <li role="presentation"><a href="#learning" role="tab" id="learning-tab" data-toggle="tab" aria-controls="learning">Comedor</a></li>
+            <li role="presentation"><a href="#playing" role="tab" id="playing-tab" data-toggle="tab" aria-controls="playing">Patio</a></li>
+            <li role="presentation"><a href="#painting" role="tab" id="painting-tab" data-toggle="tab" aria-controls="painting">Salas</a></li>
+          </ul>
+          <div id="myTabContent" class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+              <div class="w3_tab_img agileinfo_img">
+                <div class="col-md-4 w3_tab_img_left">
+                  <div class="agileits_demo">
+                    <a href="images/13.jpg">
+                      <figure class="w3layouts_work">
+                        <div class="w3layouts_work_sub">
+                          <img src="images/13.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <figcaption>
+                          <span>Nursery</span>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </div>
+                  <div class="agileits_demo">
+                    <a href="images/15.jpg">
+                      <figure class="w3layouts_work">
+                        <div class="w3layouts_work_sub">
+                          <img src="images/15.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <figcaption>
+                          <span>Nursery</span>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-4 w3_tab_img_left">
+                  <div class="agileits_demo">
+                    <a href="images/1.jpg">
+                      <figure class="w3layouts_work">
+                        <div class="w3layouts_work_sub">
+                          <img src="images/1.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <figcaption>
+                          <span>Nursery</span>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </div>
+                  <div class="agileits_demo">
+                    <a href="images/22.jpg">
+                      <figure class="w3layouts_work">
+                        <div class="w3layouts_work_sub">
+                          <img src="images/22.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <figcaption>
+                          <span>Nursery</span>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-4 w3_tab_img_left">
+                  <div class="agileits_demo">
+                    <a href="images/12.jpg">
+                      <figure class="w3layouts_work">
+                        <div class="w3layouts_work_sub">
+                          <img src="images/12.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <figcaption>
+                          <span>Nursery</span>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </div>
+                  <div class="agileits_demo">
+                    <a href="images/23.jpg">
+                      <figure class="w3layouts_work">
+                        <div class="w3layouts_work_sub">
+                          <img src="images/23.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <figcaption>
+                          <span>Nursery</span>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </div>
+                </div>
+                <div class="clearfix"> </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="learning" aria-labelledby="learning-tab">
+              <div class="w3_tab_img agileinfo_img">
+                <div class="col-md-4 w3_tab_img_left">
+                  <div class="agileits_demo">
+                    <a href="images/15.jpg">
+                      <figure class="w3layouts_work">
+                        <div class="w3layouts_work_sub">
+                          <img src="images/15.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <figcaption>
+                          <span>NEducadora</span>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-4 w3_tab_img_left">
+                  <div class="agileits_demo">
+                    <a href="images/1.jpg">
+                      <figure class="w3layouts_work">
+                        <div class="w3layouts_work_sub">
+                          <img src="images/1.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <figcaption>
+                          <span>Educadora</span>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-4 w3_tab_img_left">
+                  <div class="agileits_demo">
+                    <a href="images/23.jpg">
+                      <figure class="w3layouts_work">
+                        <div class="w3layouts_work_sub">
+                          <img src="images/23.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <figcaption>
+                          <span>Educadora</span>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </div>
+                </div>
+                <div class="clearfix"> </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="playing" aria-labelledby="playing-tab">
+              <div class="w3_tab_img agileinfo_img">
+                <div class="col-md-4 w3_tab_img_left">
+                  <div class="agileits_demo">
+                    <a href="images/13.jpg">
+                      <figure class="w3layouts_work">
+                        <div class="w3layouts_work_sub">
+                          <img src="images/13.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <figcaption>
+                          <span>Educadora</span>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-4 w3_tab_img_left">
+                  <div class="agileits_demo">
+                    <a href="images/23.jpg">
+                      <figure class="w3layouts_work">
+                        <div class="w3layouts_work_sub">
+                          <img src="images/23.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <figcaption>
+                          <span>Educadora</span>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </div>
+                </div>
+                <div class="clearfix"> </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="painting" aria-labelledby="painting-tab">
+              <div class="w3_tab_img agileinfo_img">
+                <div class="col-md-4 w3_tab_img_left">
+                  <div class="agileits_demo">
+                    <a href="images/1.jpg">
+                      <figure class="w3layouts_work">
+                        <div class="w3layouts_work_sub">
+                          <img src="images/1.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <figcaption>
+                          <span>Educadora</span>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-4 w3_tab_img_left">
+                  <div class="agileits_demo">
+                    <a href="images/22.jpg">
+                      <figure class="w3layouts_work">
+                        <div class="w3layouts_work_sub">
+                          <img src="images/22.jpg" alt=" " class="img-responsive" />
+                        </div>
+                        <figcaption>
+                          <span>Nursery</span>
+                        </figcaption>
+                      </figure>
+                    </a>
+                  </div>
+                </div>
+                <div class="clearfix"> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- //work -->
+<!-- footer -->
+  <div class="w3_agileits_twitter_post">
+    <div class="container">
+      <h4>CENDI Clementina Batalla de Bassols &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Instituto Politécnico Nacional.</h4>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="col-md-6 wthree_footer_grid_left">
+      <div class="col-md-5 wthree_footer_grid_left1">
+        <h4>¿Quiénes somos?</h4>
+        <p>Los CENDIS son instituciones que otorgan servicios educativos y asistenciales a niñas y niños desde cuarenta y cinco días de nacidos hasta los seis años de edad para preparar a los niños y niñas para su vida familiar y social.</p>
+      </div>
+      <div class="col-md-4 wthree_footer_grid_left1">
+        <h4>Navigation</h4>
+        <ul>
+          <li class="menu__item menu__item--current"><a href="#" class="menu__link">Inicio</a></li>
+              <li class="menu__item"><a href="#about" class="scroll menu__link">Programa pedagógico</a></li>
+              <li class="menu__item"><a href="#work" class="scroll menu__link">Galería</a></li>
+              <li class="menu__item"><a href="#team" class="scroll menu__link">Equipo de trabajo</a></li>
+                  </ul>
+      </div>
+      
+      <div class="clearfix"> </div>
+    </div>
+    <div class="col-md-6 wthree_footer_grid_right">
+      <div class="wthree_footer_grid_right_main">
+        <div class="col-md-5 wthree_footer_grid_right1">
+          <h5>Contact Us</h5>
+          <ul>
+            <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@example.com">cendiclementina@ipn.com</a></li>
+            <li><i class="fa fa-phone" aria-hidden="true"></i>(55) 5729-6000 EXT 55167</li>
+            <li><i class="fa fa-fax" aria-hidden="true"></i>+123 421</li>
+          </ul>
+        </div>
+        <div class="col-md-7 wthree_footer_grid_right2">
+          <div class="wthree_footer_grid_right2_w3">
+           <img src="images/burrito.jpg" align="left" border="1">
+             </div>
+          <div class="clearfix"> </div>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+      <div class="wthree_footer_grid_right_main1">
+        <ul class="agileinfo_social_icons agileits_footer_social">
+          <li><a href="https://www.facebook.com/pages/IPN-Cendi-Clementina-Batalla-de-Bassols/297088953697095" class="agileits_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="#" class="w3_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="#" class="w3l_google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+          <li><a href="#" class="w3ls_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="clearfix"> </div>
+  </div>
+  <div class="w3layouts_copy_right">
+    <div class="container">
+      <p>INSTITUTO POLITÉCNICO NACIONAL<br>
+D.R. Instituto Politécnico Nacional (IPN), Avenida Juan de Dios Bátiz esquina Miguel Othón de Mendizábal, Col. Nueva Industrial Vallejo Delegación Gustavo A. Madero, C.P 07738, Ciudad de México. Tel. 5729-6000, 5729-6300 Ext. 57701, 57702, 57703, 57704. Correo electrónico: cocendi@ipn.mx 
+<br>
+Esta página es una obra intelectual protegida por la Ley Federal del Derecho de Autor, puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica; su uso para otros fines, requiere autorización previa y por escrito del Director General del Instituto.</a></p>
+    </div>
+  </div>
+<!-- //footer -->
+<!-- contact-effect -->
+<script src="js/classie.js"></script>
+<script>
+  (function() {
+    // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+    if (!String.prototype.trim) {
+      (function() {
+        // Make sure we trim BOM and NBSP
+        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+        String.prototype.trim = function() {
+          return this.replace(rtrim, '');
+        };
+      })();
+    }
+
+    [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+      // in case the input is already filled..
+      if( inputEl.value.trim() !== '' ) {
+        classie.add( inputEl.parentNode, 'input--filled' );
+      }
+
+      // events:
+      inputEl.addEventListener( 'focus', onInputFocus );
+      inputEl.addEventListener( 'blur', onInputBlur );
+    } );
+
+    function onInputFocus( ev ) {
+      classie.add( ev.target.parentNode, 'input--filled' );
+    }
+
+    function onInputBlur( ev ) {
+      if( ev.target.value.trim() === '' ) {
+        classie.remove( ev.target.parentNode, 'input--filled' );
+      }
+    }
+  })();
+</script>
+<!-- //contact-effect -->
+<!-- work -->
+  <script type="text/javascript"  src="js/jquery.gallery.js" ></script>
+  <script>
+    $(function() {
+      $('.w3_tab_img').createSimpleImgGallery();
+    });
+  </script>
+<!-- //work -->
+<!-- flexisel -->
+  <script type="text/javascript">
+    $(window).load(function() {
+      $("#flexiselDemo1").flexisel({
+        visibleItems: 5,
+        animationSpeed: 1000,
+        autoPlay: true,
+        autoPlaySpeed: 3000,        
+        pauseOnHover: true,
+        enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: { 
+          portrait: { 
+            changePoint:480,
+            visibleItems: 1
+          }, 
+          landscape: { 
+            changePoint:640,
+            visibleItems:3
+          },
+          tablet: { 
+            changePoint:768,
+            visibleItems: 3
+          }
+        }
+      });
+      
+    });
+  </script>
+  <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+<!-- //flexisel -->
+<!-- team-slider -->
+  <script type="text/javascript" src="js/jquery.glide.js"></script>
+  <script type="text/javascript">
+    var glide = $('.w3_slider').glide().data('api_glide');
+
+      $(window).on('keyup', function (key) {
+        if (key.keyCode === 13) {
+          glide.jump(3, console.log('Wooo!'));
+        };
+      });
+  </script>
+<!-- //team-slider -->
+<!-- responsive-tabs -->
+  <script src="js/easy-responsive-tabs.js"></script>
+  <script>
+    $(document).ready(function () {
+    $('#verticalTab').easyResponsiveTabs({
+    type: 'vertical',
+    width: 'auto',
+    fit: true
+    });
+    });
+  </script>
+<!-- //responsive-tabs -->  
+<!-- text-effect -->
+    <script type="text/javascript" src="js/jquery.transit.js"></script> 
+    <script type="text/javascript" src="js/jquery.textFx.js"></script> 
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $('.test2').textFx({
+            type: 'slideIn',
+            direction: 'right',
+            iChar: 250,
+            iAnim: 1000
+          });
+      });
+    </script>
+<!-- //text-effect -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $(".scroll").click(function(event){   
+      event.preventDefault();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+    });
+  });
+</script>
+<!-- start-smoth-scrolling -->
+<!-- here stars scrolling icon -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      /*
+        var defaults = {
+        containerID: 'toTop', // fading element id
+        containerHoverID: 'toTopHover', // fading element hover id
+        scrollSpeed: 1200,
+        easingType: 'linear' 
+        };
+      */
+                
+      $().UItoTop({ easingType: 'easeOutQuart' });
+                
+      });
+  </script>
+<!-- //here ends scrolling icon -->
+<!-- for bootstrap working -->
+  <script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>
+
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/jquery-3.2.1.js"></script>
+    <script src="/js/dependencies/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/easing.js"></script>
+    <script src="/js/easy-responsive-tabs.js"></script>
+    <script src="/js/jquery-2.1.4.min.js"></script>
+    <script src="/js/jquery.flexisel.js"></script>
+    <script src="/js/jquery.gallery.js"></script>
+    <script src="/js/jquery.glide.js"></script>
+    <script src="/js/jquery.magnific-popup.js"></script>
+    <script src="/js/jquery.textFx.js"></script>
+    <script src="/js/jquery.transit.js"></script>
+    <script src="/js/jquery.vide.min.js"></script>
+    <script src="/js/move-top.js"></script>
+    <script src="/js/npm.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>

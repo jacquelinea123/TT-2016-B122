@@ -35,7 +35,12 @@ module.exports.routes = {
   '/': {
     view: 'static/index'
   }
-  
+/*
+'/': {
+    view: 'homepage'
+  }
+
+  */
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
