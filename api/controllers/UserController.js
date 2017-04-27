@@ -91,6 +91,16 @@ module.exports = {
 			}
 			res.redirect('/user/index');
 		});
+	},
+	reportediario :function(req, res){
+		console.log("holi")
+			res.view();
+	},
+
+
+		reportemensual :function(req, res){
+		console.log("holi")
+			res.view();
 	}
 };
 
